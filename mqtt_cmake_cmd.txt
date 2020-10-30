@@ -1,0 +1,39 @@
+cmake  -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl-1.1.1h/install -DOPENSSL_LIB_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl-1.1.1h/install/lib -DOPENSSL_INC_SEARCH_PATH="/home/muxuelong/work/mqtt/openssl-1.1.1h/;/home/muxuelong/work/mqtt/openssl-1.1.1h/install/include;/home/muxuelong/work/mqtt/openssl-1.1.1h/install/include/openssl" -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake ..  -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl -DOPENSSL_LIB_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl/install/lib -DOPENSSL_INC_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl/install/include -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake ..  -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/mu/work/mqtt/openssl/install -DOPENSSL_LIB_SEARCH_PATH=/home/mu/work/mqtt/openssl/install/lib -DOPENSSL_INC_SEARCH_PATH=/home/mu/work/mqtt/openssl/install/include -DCMAKE_TOOLCHAIN_FILE=/home/mu/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake ..  -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE  -DOPENSSL_LIB_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl/install/lib -DOPENSSL_INC_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl/install/include -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+./config no-asm -shared --prefix=/home/muxuelong/work/mqtt/openssl --cross-compile-prefix=arm-xilinx-linux-gnueabi-
+
+./config no-asm -shared --prefix=/home/mu/work/mqtt/openssl/install --cross-compile-prefix=arm-xilinx-linux-gnueabi-
+
+cmake ..  -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DOPENSSL_INCLUDE_DIR=/home/muxuelong/work/mqtt/openssl/install/include -DOPENSSL_SSL_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libssl.a -DOPENSSL_CRYPTO_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libcrypto.a -DOPENSSL_LIB_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl/install/lib -DOPENSSL_INC_SEARCH_PATH=/home/muxuelong/work/mqtt/openssl/install/include -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake ..  -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DOPENSSL_INCLUDE_DIR=/home/muxuelong/work/mqtt/openssl/install/include -DOPENSSL_SSL_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libssl.a -DOPENSSL_CRYPTO_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libcrypto.a -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DOPENSSL_SSL_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libssl.a -DOPENSSL_CRYPTO_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libcrypto.a  -DOPENSSL_INCLUDE_DIR=/home/muxuelong/work/mqtt/openssl/install/include -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake -DPAHO_BUILD_SHARED=TRUE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/mu/work/mqtt/openssl/install -DOPENSSL_INCLUDE_DIR=/home/mu/work/mqtt/openssl/install/include -DOPENSSL_SSL_LIBRARY=/home/mu/work/mqtt/openssl/install/lib/libssl.a -DOPENSSL_CRYPTO_LIBRARY=/home/mu/work/mqtt/openssl/install/lib/libcrypto.a  -DCMAKE_TOOLCHAIN_FILE=/home/mu/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake /home/mu/work/mqtt/paho.mqtt.c
+
+cmake .. -DPAHO_BUILD_STATIC=TRUE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install  -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DPAHO_BUILD_STATIC=TRUE -DPAHO_WITH_SSL=FALSE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DOPENSSL_SSL_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libssl.a -DOPENSSL_CRYPTO_LIBRARY=/home/muxuelong/work/mqtt/openssl/install/lib/libcrypto.a -DOPENSSL_INCLUDE_DIR=/home/muxuelong/work/mqtt/openssl/install/include -DOPENSSL_LIB_DIR=/home/muxuelong/work/mqtt/openssl/install/lib -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install/lib -DOPENSSL_INCLUDE_DIR=/home/muxuelong/work/mqtt/openssl/install/include -DOPENSSL_LIB_DIR=/home/muxuelong/work/mqtt/openssl/install/lib -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install/lib -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DCMAKE_PREFIX_PATH=/home/muxuelong/work/mqtt/openssl/install -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DOPENSSL_LIB_DIR=/home/muxuelong/work/mqtt/openssl/install/lib -DCMAKE_PREFIX_PATH=/home/muxuelong/work/mqtt/openssl/install -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+cmake .. -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=FLASE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
+
+cmake .. -DCMAKE_VERBOSE_MAKEFILE=TRUE -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Debug -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SHARED=TRUE -DPAHO_WITH_SSL=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_BUILD_DOCUMENTATION=FALSE -DOPENSSL_ROOT_DIR=/home/muxuelong/work/mqtt/openssl/install -DOPENSSL_INCLUDE_DIR=/home/muxuelong/work/mqtt/openssl/install/include -DCMAKE_TOOLCHAIN_FILE=/home/muxuelong/work/mqtt/paho.mqtt.c/cmake/toolchain.linux-arm11.cmake
+
