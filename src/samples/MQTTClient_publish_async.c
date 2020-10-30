@@ -25,7 +25,7 @@
 #include <windows.h>
 #endif
 
-#define ADDRESS     "tcp://mqtt.eclipse.org:1883"
+#define ADDRESS     "tcp://192.168.10.10:1883"
 #define CLIENTID    "ExampleClientPub"
 #define TOPIC       "MQTT Examples"
 #define PAYLOAD     "Hello World!"
