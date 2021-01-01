@@ -1700,6 +1700,9 @@ MQTTResponse MQTTClient_connectAll(MQTTClient handle, MQTTClient_connectOptions*
 		goto exit;
 	}
 
+	if (options->priv)
+		m->c->priv = options->priv;
+
 #if defined(OPENSSL)
 	if (m->ssl && options->ssl == NULL)
 	{

@@ -41,6 +41,7 @@
 #include <string.h>
 #include <signal.h>
 #include <ctype.h>
+#include <linux/if.h>
 
 #include "Heap.h"
 
@@ -666,7 +667,7 @@ void Socket_close(int socket)
  *  @return completion code
  */
 #if defined(__GNUC__) && defined(__linux__)
-int Socket_new(const char* addr, size_t addr_len, int port, int* sock, long timeout)
+int Socket_new(const char* addr, size_t addr_len, int port, int* sock, char* netdev_name, long timeout)
 #else
 int Socket_new(const char* addr, size_t addr_len, int port, int* sock)
 #endif
@@ -781,6 +782,13 @@ int Socket_new(const char* addr, size_t addr_len, int port, int* sock)
 
 			if (setsockopt(*sock, SOL_SOCKET, SO_NOSIGPIPE, (void*)&opt, sizeof(opt)) != 0)
 				Log(LOG_ERROR, -1, "Could not set SO_NOSIGPIPE for socket %d", *sock);
+#endif
+#if defined(__GNUC__) && defined(__linux__)
+			struct ifreq ifr;
+			memset(&ifr, 0, sizeof(ifr));
+			strncpy(ifr.ifr_name, netdev_name, strlen(netdev_name));
+			if (setsockopt(sock, SOL_SOCKET, SO_BINDTODEVICE, (char *)&ifr, sizeof(ifr)))
+				Log(LOG_ERROR, -1, "Could not set SO_BINDTODEVICE for socket %d\n", *sock);
 #endif
 /*#define SMALL_TCP_BUFFER_TESTING
   This section sets the TCP send buffer to a small amount to provoke TCPSOCKET_INTERRUPTED

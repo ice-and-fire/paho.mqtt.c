@@ -1329,6 +1329,9 @@ typedef struct
 	 * httpHeaders
 	 */
 	const MQTTAsync_nameValue* httpHeaders;
+
+	/* MQTT connetion private data */
+	void *priv;
 } MQTTAsync_connectOptions;
 
 

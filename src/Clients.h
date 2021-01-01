@@ -149,6 +149,7 @@ typedef struct
 	MQTTClient_SSLOptions *sslopts; /**< the SSL/TLS connect options */
 	SSL_SESSION* session;           /**< SSL session pointer for fast handhake */
 #endif
+	void *priv;	/* Clients's private */
 } Clients;
 
 int clientIDCompare(void* a, void* b);

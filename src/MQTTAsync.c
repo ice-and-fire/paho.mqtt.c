@@ -3498,6 +3498,9 @@ int MQTTAsync_connect(MQTTAsync handle, const MQTTAsync_connectOptions* options)
 		goto exit;
 	}
 
+	if (options->priv)
+		m->c->priv = options->priv;
+
 #if defined(OPENSSL)
 	if (m->ssl && options->ssl == NULL)
 	{

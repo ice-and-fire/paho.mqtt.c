@@ -948,6 +948,9 @@ typedef struct
 	 * httpHeaders
 	 */
 	const MQTTClient_nameValue* httpHeaders;
+
+	/* MQTT connection private data */
+	void *priv;
 } MQTTClient_connectOptions;
 
 #define MQTTClient_connectOptions_initializer { {'M', 'Q', 'T', 'C'}, 7, 60, 1, 1, NULL, NULL, NULL, 30, 0, NULL,\
