@@ -1704,6 +1704,16 @@ LIBMQTT_API MQTTAsync_nameValue* MQTTAsync_getVersionInfo(void);
  */
 LIBMQTT_API const char* MQTTAsync_strerror(int code);
 
+/**
+ * bind application private data to MQTT Client
+ */
+LIBMQTT_API void MQTTAsync_setPrivateData(MQTTAsync handle, void *private);
+
+/**
+ * Get application private data from MQTT Client
+ */
+LIBMQTT_API void *MQTTAsync_getPrivateData(MQTTAsync handle);
+
 
 /**
   * @cond MQTTAsync_main

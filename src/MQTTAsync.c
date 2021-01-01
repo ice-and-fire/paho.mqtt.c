@@ -3499,7 +3499,7 @@ int MQTTAsync_connect(MQTTAsync handle, const MQTTAsync_connectOptions* options)
 	}
 
 	if (options->priv)
-		m->c->priv = options->priv;
+		m->c->conn_priv = options->priv;
 
 #if defined(OPENSSL)
 	if (m->ssl && options->ssl == NULL)
@@ -4989,4 +4989,18 @@ const char* MQTTAsync_strerror(int code)
 
   sprintf(buf, "Unknown error code %d", code);
   return buf;
+}
+
+void MQTTAsync_setPrivateData(MQTTAsync handle, void *private)
+{
+	MQTTAsyncs *m = handle;
+	if (private)
+		m->c->priv = private;
+	return;
+}
+
+void *MQTTAsync_getPrivateData(MQTTAsync handle)
+{
+	MQTTAsyncs *m = handle;
+	return m->c->priv;
 }

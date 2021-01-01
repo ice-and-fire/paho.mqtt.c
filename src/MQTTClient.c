@@ -1701,7 +1701,7 @@ MQTTResponse MQTTClient_connectAll(MQTTClient handle, MQTTClient_connectOptions*
 	}
 
 	if (options->priv)
-		m->c->priv = options->priv;
+		m->c->conn_priv = options->priv;
 
 #if defined(OPENSSL)
 	if (m->ssl && options->ssl == NULL)
@@ -2990,4 +2990,19 @@ static void MQTTClient_writeComplete(int socket, int rc)
 		m->c->net.lastSent = MQTTTime_now();
 	}
 	FUNC_EXIT;
+}
+
+void MQTTClient_setPrivateData(MQTTClient handle, void *private)
+{
+	MQTTClients* m = handle;
+	if (private)
+		m->c->priv = private;
+
+	return;
+}
+
+void *MQTTClient_getPrivateData(MQTTClient handle)
+{
+	MQTTClients* m = handle;
+	return m->c->priv;
 }

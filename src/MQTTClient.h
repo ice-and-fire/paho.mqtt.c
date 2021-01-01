@@ -1422,6 +1422,16 @@ LIBMQTT_API void MQTTClient_setTraceCallback(MQTTClient_traceCallback* callback)
  */
 LIBMQTT_API const char* MQTTClient_strerror(int code);
 
+/**
+ * bind application private data to MQTT Client
+ */
+LIBMQTT_API void MQTTClient_setPrivateData(MQTTClient handle, void *private);
+
+/**
+ * Get application private data from MQTT Client
+ */
+LIBMQTT_API void *MQTTClient_getPrivateData(MQTTClient handle);
+
 #ifdef __cplusplus
      }
 #endif
